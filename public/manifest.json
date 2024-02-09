@@ -1,0 +1,43 @@
+{
+  "background_color": "#ffffff",
+  "cstegories": ["news", "entertainment", "sports"],
+  "description": "PWA de prueba",
+  "dir": "ltr",
+  "display_override": ["standalone", "fullscreen"],
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo-soy502-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-soy502-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "id": "/v1",
+  "lang": "es-GT",
+  "name": "PWA GL Test",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
+  "protocol_handlers": [
+    {
+      "protocol": "",
+      "url": ""
+    }
+  ],
+  "scope": "/",
+  "shortname": "PWA GL",
+  "shortcuts": [
+    {
+      "name": "Ir a sección acerca",
+      "short_name": "acerca",
+      "description": "Ahorra tiempo y ve a acerca",
+      "url": "/about"
+    }
+  ],
+  "start_url": "/",
+  "theme_color": "#222"
+}
