@@ -5,9 +5,14 @@ import Home from './pages/Home'
 import Listado from './pages/Listado'
 import Acerca from './pages/Acerca'
 import Item from './components/Item'
+import ReactGA from "react-ga4"
 import './App.scss';
 
 function App() {
+  const TRACKING_ID = "G-VTVDKQW9F8";
+  ReactGA.initialize(TRACKING_ID);
+  ReactGA.send({ hitType: "pageview", page: document.location.pathname });
+
   return (
     <div className="App">
       <Router>
