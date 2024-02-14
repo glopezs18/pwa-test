@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import ReactGA from "react-ga4"
 import '../styles/pages.scss';
 
 function Listado() {
@@ -13,8 +14,17 @@ function Listado() {
             })
             .then((list) => {
                 setList(list)
-            })
+            })        
     }, [])
+
+   
+    // function sendEventGA4() {
+    //     ReactGA.event({
+    //         category: "Product",
+    //         action: "click",
+    //         label: "Item"
+    //     });
+    // }
 
     function showList() {
         return (
@@ -25,13 +35,13 @@ function Listado() {
                         <div className="row justify-content-center mb-3">
                             {list.map(item => {
                                 return (
-                                    <div className="col-md-12 col-xl-10" style={{marginBottom: "10px"}} key={item.id}>
+                                    <div className="col-md-12 col-xl-10" style={{ marginBottom: "10px" }} key={item.id}>
                                         <div className="card shadow-0 border rounded-3">
                                             <div className="card-body">
                                                 <div className="row">
                                                     <div className="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                                         <div className="bg-image hover-zoom ripple rounded ripple-surface">
-                                                            <div style={{width: "210px", height:"140px", backgroundImage: `url(${item.image})`, backgroundSize: "cover"}}></div>
+                                                            <div style={{ width: "210px", height: "140px", backgroundImage: `url(${item.image})`, backgroundSize: "cover" }}></div>
                                                             {/* <img src={item.image}
                                                                 className="w-100" /> */}
                                                             <a href="#!">
@@ -56,7 +66,9 @@ function Listado() {
                                                         </div>
                                                         <h6 className="text-success">Envío gratis</h6>
                                                         <div className="d-flex flex-column mt-4">
-                                                            <Link to={`/list/${item.id}`} style={{color: "#fff", textDecoration: "none"}} relative="route"><button className="btn btn-primary btn-sm" type="button">Detalles</button></Link>
+                                                            <NavLink to={`/list/${item.id}`} style={{ color: "#fff", textDecoration: "none" }} relative="route"><button className="btn btn-primary btn-sm" type="button">Detalles</button></NavLink>
+                                                            {/* <Link to={`/list/${item.id}`} style={{ color: "#fff", textDecoration: "none" }} relative="route"><button onClick={sendEventGA4} className="btn btn-primary btn-sm" type="button">Detalles</button></Link> */}
+                                                            {/* <button onClick={sendEventGA4(item.title, item.category, item.price)} className="btn btn-primary btn-sm" type="button">Detalles</button> */}
                                                         </div>
                                                     </div>
                                                 </div>

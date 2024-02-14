@@ -50,3 +50,19 @@
     background-color: #f1f1f1;
     margin: 5rem 0;
 }
+
+.hidden {
+    display: none;
+}
+
+.getComments {
+    display: block;
+    width: 60%;    
+    margin: 6px auto 0 !important;
+    line-height: 26px;
+    background: #4267b2;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    border: 0;
+}

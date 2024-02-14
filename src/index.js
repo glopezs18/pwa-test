@@ -4,14 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.scss';
 import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 
@@ -21,9 +25,9 @@ root.render(
 // serviceWorkerRegistration.unregister();
 serviceWorkerRegistration.register({
   onUpdate: async (registration) => {
-    if(registration && registration.waiting) {
+    if (registration && registration.waiting) {
       await registration.unregister();
-      registration.waiting.postMessage({ type: "SKIP_WAITING"});
+      registration.waiting.postMessage({ type: "SKIP_WAITING" });
 
       window.location.reload();
     }

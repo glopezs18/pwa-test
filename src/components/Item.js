@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+import ReactGA from "react-ga4"
 import '../styles/pages.scss';
 
 function Item() {
@@ -16,18 +17,29 @@ function Item() {
             .then((item) => {
                 setItem(item)
             })
+
+        
     }, [])
+
+    const sendEventGA4 = (_title, _category, _price) => {
+        ReactGA.event({
+            category: _category,
+            action: "click",
+            label: _title, // optional
+            value: _price, // optional, must be a number
+        });
+    }
 
     function showItem() {
         return (
             <div>
-                <div className="container" style={{margin: "40px 0"}}>
+                <div className="container" style={{ margin: "40px 0" }}>
                     <div className="row">
                         <div className="col-sm-4 item-photo">
                             <img style={{ width: "100%" }} src={item.image} />
                         </div>
-                        <div className="col-sm-8" style={{border:"0px solid gray", padding: "50px"}}>
-                            <h3 style={{marginTop: "20px"}}>{item.title}</h3>
+                        <div className="col-sm-8" style={{ border: "0px solid gray", padding: "50px" }}>
+                            <h3 style={{ marginTop: "20px" }}>{item.title}</h3>
                             <h5 style={{ color: "#337ab7" }}>{item.category}</h5>
 
                             <h6 className="title-price"><small>PRECIO</small></h6>
@@ -36,14 +48,14 @@ function Item() {
                             <ul className="menu-items">
                                 <li className="active">Detalle del producto</li>
                             </ul>
-                            <div style={{width:"100%", borderTop: "1px solid silver"}}>
+                            <div style={{ width: "100%", borderTop: "1px solid silver" }}>
                                 <p style={{ padding: "15px" }}>
                                     <small>
                                         {item.description}
                                     </small>
                                 </p>
                             </div>
-
+                            <button className="btn btn-success" onClick={event => sendEventGA4(item.title, item.category, item.price)} >test</button>
                         </div>
                     </div>
                 </div>
