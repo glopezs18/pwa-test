@@ -1,28 +1,19 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
-import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+import { DFPSlotsProvider, AdSlot, DFPManager } from 'react-dfp';
 import '../styles/home.scss';
 
 function Home() {
-    const [toggled, setToggled] = useState(false);    
-
+    const [toggled, setToggled] = useState(false);
+   
     useEffect(() => {
-        window.fbAsyncInit = () => {
-            window.FB.init({
-                appId            : 'your-app-id',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v11.0'
-            });
-        };
-        
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) { return; }
             js = d.createElement(s); js.id = id;
             js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.2&appId=myAppId&xfbml=true&autoLogAppEvents=true";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        }(document, 'script', 'facebook-jssdk'));                   
     }, []);
 
     const getComments = (url) => {
@@ -36,7 +27,7 @@ function Home() {
         //     __html: ''
         // };
         // elId.innerHTML = '<div class="fb-comments" data-href="https://www.soy502.com ' + location.pathname + '" data-numposts="5"></div>';
-        
+
     }
 
     return (
@@ -148,7 +139,7 @@ function Home() {
                         <p className="lead">Ya sea primavera, verano, otoño o invierno, encontrarás la ropa perfecta en nuestra tienda para lucir bien en cualquier estación.</p>
                         <DFPSlotsProvider dfpNetworkId="82890815">
                             <div className="desktop-ads">
-                                <AdSlot sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" targetingArguments={{ 'segment': 'comida' }} />                                
+                                <AdSlot slotId="test1" sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" targetingArguments={{ 'segment': 'comida' }} />
                             </div>
                         </DFPSlotsProvider>
                     </div>
