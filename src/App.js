@@ -5,7 +5,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Home from './pages/Home'
 import Listado from './pages/Listado'
 import Acerca from './pages/Acerca'
+import Login from './pages/Login'
+import Profile from './pages/Profile'
+import ForgotPassword from './pages/ForgotPassword'
 import Item from './components/Item'
+import RouteGuard from "./RouteGuard"
 import ReactGA from "react-ga4"
 import './App.scss';
 
@@ -32,6 +36,17 @@ function App() {
         <Route exact path='/list' element={< Listado />}></Route>
         <Route exact path='/list/:id' element={<Item />}></Route>
         <Route exact path='/about' element={< Acerca />}></Route>
+        <Route exact path='/login' element={< Login />}></Route>
+        <Route exact path='/profile' element={< Profile />}></Route>
+        <Route exact path='/forgot-password' element={< ForgotPassword />}></Route>
+
+         <Route path="/profile"
+            element={
+              <RouteGuard>
+                <Profile />
+              </RouteGuard>
+            }
+          />         
       </Routes>
       <Footer />
     </div>

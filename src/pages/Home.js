@@ -5,7 +5,7 @@ import '../styles/home.scss';
 
 function Home() {
     const [toggled, setToggled] = useState(false);
-   
+       
     useEffect(() => {
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -13,7 +13,7 @@ function Home() {
             js = d.createElement(s); js.id = id;
             js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.2&appId=myAppId&xfbml=true&autoLogAppEvents=true";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));                   
+        }(document, 'script', 'facebook-jssdk'));
     }, []);
 
     const getComments = (url) => {
@@ -85,95 +85,95 @@ function Home() {
 
 
             <div className="container marketing" id="marketing">
+                <DFPSlotsProvider dfpNetworkId="82890815">
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <img className="img-characteristics" src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
 
-                <div className="row">
-                    <div className="col-lg-4">
-                        <img className="img-characteristics" src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
-
-                        <h2>Variedad de Estilos</h2>
-                        <p>Explora nuestra amplia gama de estilos, desde elegante hasta casual, para encontrar la ropa perfecta que se adapte a tu personalidad y ocasión.</p>
-                    </div>
-                    <div className="col-lg-4">
-                        <img className="img-characteristics" src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" />
-
-                        <h2>Comodidad Inigualable</h2>
-                        <p>Nuestras prendas están diseñadas con materiales de alta calidad para ofrecer una comodidad incomparable, para que puedas sentirte genial todo el día.</p>
-                    </div>
-                    <div className="col-lg-4">
-                        <img className="img-characteristics" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
-
-                        <h2>Calidad Duradera</h2>
-                        <p>Te garantizamos que nuestras prendas están hechas para durar, con atención a cada detalle y materiales que resisten el paso del tiempo.</p>
-                    </div>
-                </div>
-
-                <div id="ClothesThings" className="featurette-divider"></div>
-
-                <div className="row featurette">
-                    <div className="col-md-7">
-                        <h2 className="featurette-heading">Colección  <span className="text-muted">de Tendencia</span></h2>
-                        <p className="lead">Descubre nuestra colección de tendencia, siempre actualizada con las últimas y más elegantes prendas de moda para mantenerte a la vanguardia.</p>
-
-                        <button className="getComments bt-comments" onClick={event => getComments('articulo/quitaran-carros-gruas-usac-anuncia-drastica-medida-101477')}> Comentar <i className="fa fa-comment" aria-hidden="true"></i></button>
-
-                        <div className={toggled ? "fb-comments" : "fb-comments hidden"} id="articulo/quitaran-carros-gruas-usac-anuncia-drastica-medida-101477">
-                            <div className="fb-comments" data-href="https://www.soy502.com/articulo/quitaran-carros-gruas-usac-anuncia-drastica-medida-101477" data-numposts="5"></div>
+                            <h2>Variedad de Estilos</h2>
+                            <p>Explora nuestra amplia gama de estilos, desde elegante hasta casual, para encontrar la ropa perfecta que se adapte a tu personalidad y ocasión.</p>
                         </div>
-                        <div className="desktop-ads">
-                            {/* <AdSlot dfpNetworkId="82890815" sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" /> */}
+                        <div className="col-lg-4">
+                            <img className="img-characteristics" src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" />
+
+                            <h2>Comodidad Inigualable</h2>
+                            <p>Nuestras prendas están diseñadas con materiales de alta calidad para ofrecer una comodidad incomparable, para que puedas sentirte genial todo el día.</p>
                         </div>
+                        <div className="col-lg-4">
+                            <img className="img-characteristics" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
 
+                            <h2>Calidad Duradera</h2>
+                            <p>Te garantizamos que nuestras prendas están hechas para durar, con atención a cada detalle y materiales que resisten el paso del tiempo.</p>
+                        </div>
                     </div>
-                    <div className="col-md-5">
-                        <img width="100%" src="https://images.unsplash.com/photo-1556011299-650a931cbfae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
 
-                    </div>
-                </div>
+                    <div id="ClothesThings" className="featurette-divider"></div>
 
-                <div className="featurette-divider"></div>
+                    <div className="row featurette">
+                        <div className="col-md-7">
+                            <h2 className="featurette-heading">Colección  <span className="text-muted">de Tendencia</span></h2>
+                            <p className="lead">Descubre nuestra colección de tendencia, siempre actualizada con las últimas y más elegantes prendas de moda para mantenerte a la vanguardia.</p>
 
-                <div className="row featurette">
-                    <div className="col-md-7 order-md-2">
-                        <h2 className="featurette-heading">Ropa para  <span className="text-muted">Todas las Temporadas</span>
-                        </h2>
-                        <p className="lead">Ya sea primavera, verano, otoño o invierno, encontrarás la ropa perfecta en nuestra tienda para lucir bien en cualquier estación.</p>
-                        <DFPSlotsProvider dfpNetworkId="82890815">
-                            <div className="desktop-ads">
-                                <AdSlot slotId="test1" sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" targetingArguments={{ 'segment': 'comida' }} />
+                            <button className="getComments bt-comments" onClick={event => getComments('articulo/quitaran-carros-gruas-usac-anuncia-drastica-medida-101477')}> Comentar <i className="fa fa-comment" aria-hidden="true"></i></button>
+
+                            <div className={toggled ? "fb-comments" : "fb-comments hidden"} id="articulo/quitaran-carros-gruas-usac-anuncia-drastica-medida-101477">
+                                <div className="fb-comments" data-href="https://www.soy502.com/articulo/quitaran-carros-gruas-usac-anuncia-drastica-medida-101477" data-numposts="5"></div>
                             </div>
-                        </DFPSlotsProvider>
-                    </div>
-                    <div className="col-md-5 order-md-1">
-                        <img width="100%" src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+                            <div className="desktop-ads">
+                                <AdSlot slotId="test1" dfpNetworkId="82890815" sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" />
+                            </div>
 
-                    </div>
-                </div>
-
-                <div className="featurette-divider"></div>
-
-                <div className="row featurette">
-                    <div className="col-md-7">
-                        <h2 className="featurette-heading">Elegancia <span className="text-muted">Casual</span></h2>
-                        <p className="lead">Nuestra selección de ropa combina a la perfección la elegancia con un toque casual, permitiéndote lucir sofisticado sin esfuerzo en cualquier ocasión.</p>
-
-                        <button className="getComments bt-comments" onClick={event => getComments('articulo/usac-anuncia-cursos-libres-gratuitos-este-2024-101566')}> Comentar <i className="fa fa-comment" aria-hidden="true"></i></button>
-
-                        <div className={toggled ? "fb-comments" : "fb-comments hidden"} id="articulo/usac-anuncia-cursos-libres-gratuitos-este-2024-101566">
-                            <div className="fb-comments" data-href="https://www.soy502.com/articulo/usac-anuncia-cursos-libres-gratuitos-este-2024-101566" data-numposts="5"></div>
                         </div>
-                        <div className="desktop-ads">
-                            {/* <AdSlot sizes={[[336, 280]]} targetingArguments={{ 'segment': 'carros' }} /> */}
+                        <div className="col-md-5">
+                            <img width="100%" src="https://images.unsplash.com/photo-1556011299-650a931cbfae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+
                         </div>
-
                     </div>
-                    <div className="col-md-5">
-                        <img width="100%" src="https://images.unsplash.com/photo-1600091106710-7be582d40984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" />
 
+                    <div className="featurette-divider"></div>
+
+                    <div className="row featurette">
+                        <div className="col-md-7 order-md-2">
+                            <h2 className="featurette-heading">Ropa para  <span className="text-muted">Todas las Temporadas</span>
+                            </h2>
+                            <p className="lead">Ya sea primavera, verano, otoño o invierno, encontrarás la ropa perfecta en nuestra tienda para lucir bien en cualquier estación.</p>
+
+                            <div className="desktop-ads">
+                                <AdSlot slotId="test2" sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" targetingArguments={{ 'segment': 'comida' }} />
+                            </div>
+
+                        </div>
+                        <div className="col-md-5 order-md-1">
+                            <img width="100%" src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+
+                        </div>
                     </div>
-                </div>
 
-                <div className="featurette-divider"></div>
+                    <div className="featurette-divider"></div>
 
+                    <div className="row featurette">
+                        <div className="col-md-7">
+                            <h2 className="featurette-heading">Elegancia <span className="text-muted">Casual</span></h2>
+                            <p className="lead">Nuestra selección de ropa combina a la perfección la elegancia con un toque casual, permitiéndote lucir sofisticado sin esfuerzo en cualquier ocasión.</p>
+
+                            <button className="getComments bt-comments" onClick={event => getComments('articulo/usac-anuncia-cursos-libres-gratuitos-este-2024-101566')}> Comentar <i className="fa fa-comment" aria-hidden="true"></i></button>
+
+                            <div className={toggled ? "fb-comments" : "fb-comments hidden"} id="articulo/usac-anuncia-cursos-libres-gratuitos-este-2024-101566">
+                                <div className="fb-comments" data-href="https://www.soy502.com/articulo/usac-anuncia-cursos-libres-gratuitos-este-2024-101566" data-numposts="5"></div>
+                            </div>
+                            <div className="desktop-ads">
+                                <AdSlot slotId="test3" sizes={[[336, 280]]} adUnit="Mobile_Box_Top_Fama_Arte" targetingArguments={{ 'segment': 'carros' }} />
+                            </div>
+
+                        </div>
+                        <div className="col-md-5">
+                            <img width="100%" src="https://images.unsplash.com/photo-1600091106710-7be582d40984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" />
+
+                        </div>
+                    </div>
+
+                    <div className="featurette-divider"></div>
+                </DFPSlotsProvider>
             </div>
         </Fragment>
 

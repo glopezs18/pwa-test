@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import React, { useEffect, useContext } from 'react'
+import { NavLink } from "react-router-dom";
 import '../styles/header.scss';
+import { AuthContext } from "../AuthContext"
 
 function Header() {
     const [isReadyForInstall, setIsReadyForInstall] = React.useState(false);
+    const { user } = useContext(AuthContext)    
 
     useEffect(() => {
         window.addEventListener("beforeinstallprompt",
@@ -48,7 +50,7 @@ function Header() {
                             <li className="nav-item">
                                 <NavLink
                                     to="/"
-                                    className={`nav-link px-2 text-white ${({ isActive }) => (isActive ? 'active' : '')}`}
+                                    className={`nav-link px-2 text-white`}
                                 >
                                     Inicio
                                 </NavLink>
@@ -56,19 +58,40 @@ function Header() {
                             <li className="nav-item">
                                 <NavLink
                                     to="/list"
-                                    className={`nav-link px-2 text-white ${({ isActive }) => (isActive ? 'active' : '')}`}
+                                    className={`nav-link px-2 text-white`}
                                 >
                                     Listado
                                 </NavLink>
                             </li>
+
+
                             <li className="nav-item">
                                 <NavLink
                                     to="/about"
-                                    className={`nav-link px-2 text-white ${({ isActive }) => (isActive ? 'active' : '')}`}
+                                    className={`nav-link px-2 text-white`}
                                 >
                                     Acerca de
                                 </NavLink>
                             </li>
+                            {!user ? (
+                                <li className="nav-item">
+                                    <NavLink
+                                        to="/login"
+                                        className={`nav-link px-2 text-white`}
+                                    >
+                                        Login
+                                    </NavLink>
+                                </li>
+                            ) : (
+                                <li className="nav-item">
+                                    <NavLink
+                                        to="/profile"
+                                        className={`nav-link px-2 text-white`}
+                                    >
+                                        Perfil
+                                    </NavLink>
+                                </li>
+                            )}
                             <li>
                                 {isReadyForInstall && <button className="btn btn-danger" onClick={downloadApp}>Descargar App</button>}
                             </li>

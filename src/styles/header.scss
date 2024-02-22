@@ -1,10 +1,23 @@
 @import "variables.scss";
+
 .bg-header {
     background: $bg-header;
 
     a {
         span {
             color: #fff;
+        }
+    }
+}
+
+header {
+    .nav-pills {
+        .nav-link {
+            background: transparent;
+
+            &.active {
+                background: #3b71ca;
+            }
         }
     }
 }
